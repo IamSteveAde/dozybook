@@ -1509,11 +1509,12 @@ h6 {
   /* Full Image Section */
   .full-image-section {
     padding: 30px 0;
+    width: 100%;
     margin-top: -150px; /* reduce overlap for mobile */
   }
 
   .full-image {
-    width: 90%;
+    width: 110%;
   }
 
   /* DM Section */
