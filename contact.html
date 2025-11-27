@@ -115,7 +115,41 @@ License: https://freebootstrap.net/license
           <div class="ms-auto w-auto">
             
             
-            <div class="header-social d-flex align-items-center gap-1"><a class="btn btn-primary py-2" href="#">Buy Book</a>
+            <div class="header-social d-flex align-items-center gap-1"><!-- Buy Book Button -->
+<a class="btn btn-primary py-2" href="#" id="buyBookBtn">Buy Book</a>
+
+<!-- Modal Overlay -->
+<div id="buyBookModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h2>Select Book Format</h2>
+    
+    <div class="format-options">
+      <label>
+        <input type="radio" name="format" value="Audiobook" checked>
+        Audiobook - £15 GBP
+      </label>
+      <label>
+        <input type="radio" name="format" value="Paperback">
+        Paperback - £27 GBP
+      </label>
+      <label>
+        <input type="radio" name="format" value="Hardcover">
+        Hardcover - £39 GBP
+      </label>
+    </div>
+
+    <div class="quantity">
+      <label>Quantity:</label>
+      <input type="number" min="1" value="1" id="bookQty">
+    </div>
+
+    <button id="checkoutBtn" class="modal-btn">Checkout</button>
+
+    <p id="successMessage" class="success-msg" style="display:none;">Thank you! Your order has been added.</p>
+  </div>
+</div>
+
               
               <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto" data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars" aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
                 <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -299,6 +333,38 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     once: true, // whether animation should happen only once while scrolling down
   });
 </script>
+<script>
+  // Elements
+  const buyBtn = document.getElementById('buyBookBtn');
+  const modal = document.getElementById('buyBookModal');
+  const closeBtn = document.querySelector('.modal-close');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const successMsg = document.getElementById('successMessage');
+
+  // Open Modal
+  buyBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    successMsg.style.display = 'none'; // hide previous success
+  });
+
+  // Close Modal
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  // Checkout (dummy)
+  checkoutBtn.addEventListener('click', () => {
+    successMsg.style.display = 'block';
+  });
+</script>
+
 
     <!-- End JavaScripts-->
   </body>

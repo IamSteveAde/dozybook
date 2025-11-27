@@ -2165,3 +2165,81 @@ h6 {
     padding: 30px 20px;
   }
 }
+/* Modal Overlay */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  font-family: 'Hvdtrial Brandon Grotesque', Arial, sans-serif;
+  position: relative;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Format Options */
+.format-options label {
+  display: block;
+  margin: 15px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Quantity Input */
+.quantity {
+  margin: 20px 0;
+}
+
+.quantity input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Checkout Button */
+.modal-btn {
+  background-color: #0a2a5c;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.modal-btn:hover {
+  background-color: #113b80;
+}
+
+/* Success Message */
+.success-msg {
+  color: green;
+  font-weight: 600;
+  margin-top: 20px;
+}

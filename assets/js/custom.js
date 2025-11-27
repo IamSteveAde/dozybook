@@ -562,3 +562,34 @@ faqItems.forEach(item => {
     item.classList.toggle('open');
   });
 });
+// All Buy Book buttons
+const buyBtns = document.querySelectorAll('.book-button');
+const modal = document.getElementById('buyBookModal');
+const closeBtn = document.querySelector('.modal-close');
+const checkoutBtn = document.getElementById('checkoutBtn');
+const successMsg = document.getElementById('successMessage');
+
+// Open modal for any Buy Book button
+buyBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    successMsg.style.display = 'none';
+  });
+});
+
+// Close modal
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// Checkout dummy
+checkoutBtn.addEventListener('click', () => {
+  successMsg.style.display = 'block';
+});
