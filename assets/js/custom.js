@@ -593,3 +593,11 @@ window.addEventListener('click', (e) => {
 checkoutBtn.addEventListener('click', () => {
   successMsg.style.display = 'block';
 });
+const mobileBuyBtn = document.getElementById('mobileBuyBtn');
+
+// Open modal when mobile button clicked
+mobileBuyBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  modal.style.display = 'block';
+  successMsg.style.display = 'none';
+});

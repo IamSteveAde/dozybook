@@ -1509,7 +1509,7 @@ h6 {
   /* Full Image Section */
   .full-image-section {
     padding: 30px 0;
-    width: 100%;
+    width: 90%;
     margin-top: -150px; /* reduce overlap for mobile */
   }
 
@@ -2164,6 +2164,9 @@ h6 {
   .contact-container {
     padding: 30px 20px;
   }
+  .buy-mobile{
+    display: block;
+  }
 }
 /* Modal Overlay */
 .modal {
@@ -2242,4 +2245,32 @@ h6 {
   color: green;
   font-weight: 600;
   margin-top: 20px;
+}
+ /* Mobile floating Buy Book button */
+.mobile-buy-btn {
+  display: none; /* hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0a2a5c;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  z-index: 999;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+.mobile-buy-btn:hover {
+  background-color: #113b80;
+}
+
+/* Only show on mobile screens */
+@media (max-width: 900px) {
+  .mobile-buy-btn {
+    display: block;
+  }
 }
