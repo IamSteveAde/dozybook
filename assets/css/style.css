@@ -1693,6 +1693,9 @@ h6 {
     text-align: center;
     gap: 25px;
   }
+  .book-highlight-section{
+    height: 100vh;
+  }
 
   .book-highlight-text, .book-highlight-image {
     flex: 1 1 100%;
