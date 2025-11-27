@@ -1488,7 +1488,7 @@ h6 {
 
   /* Hero Section */
   .dozy-book-text {
-    height: 100vh; /* let it shrink on mobile */
+    height: 80vh; /* let it shrink on mobile */
     padding: 60px 20px;
   }
 
