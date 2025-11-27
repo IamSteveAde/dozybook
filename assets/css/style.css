@@ -1890,6 +1890,9 @@ h6 {
     max-width: 90%;
     padding: 20px;
   }
+  .author-bio-section{
+    width: 100%;
+  }
 
   .author-bio-image {
     margin-bottom: 20px;
