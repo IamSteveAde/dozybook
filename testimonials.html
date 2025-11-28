@@ -123,7 +123,7 @@ License: https://freebootstrap.net/license
   <div class="modal-content">
     <span class="modal-close">&times;</span>
     <h2>Select Book Format</h2>
-    
+
     <div class="format-options">
       <label>
         <input type="radio" name="format" value="Audiobook" checked>
@@ -139,6 +139,18 @@ License: https://freebootstrap.net/license
       </label>
     </div>
 
+    <!-- Language Selector (shown only for Audiobook) -->
+    <div id="languageSelect" style="margin-top:15px;">
+      <label for="audioLanguage">Select Audiobook Language:</label>
+      <select id="audioLanguage">
+        <option value="English">English</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Mandarin">Mandarin</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Swahili">Swahili</option>
+      </select>
+    </div>
+
     <div class="quantity">
       <label>Quantity:</label>
       <input type="number" min="1" value="1" id="bookQty">
@@ -146,7 +158,9 @@ License: https://freebootstrap.net/license
 
     <button id="checkoutBtn" class="modal-btn">Checkout</button>
 
-    <p id="successMessage" class="success-msg" style="display:none;">Thank you! Your order has been added.</p>
+    <p id="successMessage" class="success-msg" style="display:none;">
+      Thank you! Your order has been added.
+    </p>
   </div>
 </div>
 
@@ -334,6 +348,22 @@ License: https://freebootstrap.net/license
   checkoutBtn.addEventListener('click', () => {
     successMsg.style.display = 'block';
   });
+</script>
+<script>
+  const formatInputs = document.querySelectorAll('input[name="format"]');
+  const languageSelect = document.getElementById('languageSelect');
+
+  function toggleLanguage() {
+    const selected = document.querySelector('input[name="format"]:checked').value;
+    languageSelect.style.display = selected === 'Audiobook' ? 'block' : 'none';
+  }
+
+  formatInputs.forEach(input => {
+    input.addEventListener('change', toggleLanguage);
+  });
+
+  // Run once on page load
+  toggleLanguage();
 </script>
 
 
