@@ -2274,3 +2274,57 @@ h6 {
     display: block;
   }
 }
+#shippingInfoFields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between fields */
+  margin-top: 15px;
+}
+
+/* Input fields */
+#shippingInfoFields input,
+#shippingInfoFields select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+/* Focus effect */
+#shippingInfoFields input:focus,
+#shippingInfoFields select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Labels */
+#shippingInfoFields label {
+  font-weight: 500;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+/* Buttons */
+#step2 .modal-btn {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+#step2 .modal-btn:hover {
+  background-color: #45a049;
+}
+
+/* Step2 container styling */
+#step2 {
+  padding-top: 10px;
+}

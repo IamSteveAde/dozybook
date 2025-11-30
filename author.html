@@ -119,51 +119,103 @@ License: https://freebootstrap.net/license
 <a class="btn btn-primary py-2" href="#" id="buyBookBtn">Buy Book</a>
 
 <!-- Modal Overlay -->
-<!-- Modal Overlay -->
 <div id="buyBookModal" class="modal">
   <div class="modal-content">
     <span class="modal-close">&times;</span>
-    <h2>Select Book Format</h2>
 
-    <div class="format-options">
-      <label>
-        <input type="radio" name="format" value="Audiobook" checked>
-        Audiobook - £15 GBP
-      </label>
-      <label>
-        <input type="radio" name="format" value="Paperback">
-        Paperback - £27 GBP
-      </label>
-      <label>
-        <input type="radio" name="format" value="Hardcover">
-        Hardcover - £39 GBP
-      </label>
+    <!-- Step 1: Book Info -->
+    <div id="step1">
+      <h2>Select Book Format</h2>
+      <div class="format-options">
+        <label>
+          <input type="radio" name="format" value="Audiobook" checked>
+          Audiobook - £15 GBP
+        </label>
+        <label>
+          <input type="radio" name="format" value="Paperback">
+          Paperback - £27 GBP
+        </label>
+        <label>
+          <input type="radio" name="format" value="Hardcover">
+          Hardcover - £39 GBP
+        </label>
+      </div>
+
+      <!-- Language Selector (Audiobook only) -->
+      <div id="languageSelect" style="margin-top:15px;">
+        <label for="audioLanguage">Select Audiobook Language:</label>
+        <select id="audioLanguage">
+          <option value="English">English</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Mandarin">Mandarin</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Swahili">Swahili</option>
+        </select>
+      </div>
+
+      <div class="quantity" style="margin-top:15px;">
+        <label>Quantity:</label>
+        <input type="number" min="1" value="1" id="bookQty">
+      </div>
+
+      <button id="nextBtn" class="modal-btn" style="margin-top:15px;">Next</button>
     </div>
 
-    <!-- Language Selector (shown only for Audiobook) -->
-    <div id="languageSelect" style="margin-top:15px;">
-      <label for="audioLanguage">Select Audiobook Language:</label>
-      <select id="audioLanguage">
-        <option value="English">English</option>
-        <option value="Arabic">Arabic</option>
-        <option value="Mandarin">Mandarin</option>
-        <option value="Japanese">Japanese</option>
-        <option value="Swahili">Swahili</option>
-      </select>
+    <!-- Step 2: Shipping Info -->
+    <div id="step2" style="display:none;">
+      <h2>Shipping Information</h2>
+      <div id="shippingInfoFields">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" placeholder="John Doe">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="example@mail.com">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="+234 800 000 0000">
+
+        <label for="addressLine1">Address Line 1:</label>
+        <input type="text" id="addressLine1" placeholder="Street address, P.O. box">
+
+        <label for="addressLine2">Address Line 2:</label>
+        <input type="text" id="addressLine2" placeholder="Apartment, suite, unit (optional)">
+
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="City">
+
+        <label for="state">State/Province:</label>
+        <input type="text" id="state" placeholder="State">
+
+        <label for="postalCode">Postal Code:</label>
+        <input type="text" id="postalCode" placeholder="ZIP / Postal code">
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" placeholder="Country">
+      </div>
+
+      <button id="backBtn" class="modal-btn" style="margin-top:15px;">Back</button>
+      <button id="checkoutBtn" class="modal-btn" style="margin-top:15px;">Checkout</button>
     </div>
 
-    <div class="quantity">
-      <label>Quantity:</label>
-      <input type="number" min="1" value="1" id="bookQty">
-    </div>
-
-    <button id="checkoutBtn" class="modal-btn">Checkout</button>
-
-    <p id="successMessage" class="success-msg" style="display:none;">
+    <p id="successMessage" class="success-msg" style="display:none; margin-top:15px;">
       Thank you! Your order has been added.
     </p>
   </div>
-</div>
+</div>              
+              <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto" data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars" aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
+                <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="21" x2="3" y1="6" y2="6"></line>
+                  <line x1="15" x2="3" y1="12" y2="12"></line>
+                  <line x1="17" x2="3" y1="18" y2="18"></line>
+                </svg>
+                <svg class="fbs__net-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+              
+            </div>
+            <!-- Modal Overlay -->
               
               <button class="fbs__net-navbar-toggler justify-content-center align-items-center ms-auto" data-bs-toggle="offcanvas" data-bs-target="#fbs__net-navbars" aria-controls="fbs__net-navbars" aria-label="Toggle navigation" aria-expanded="false">
                 <svg class="fbs__net-icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -356,6 +408,48 @@ License: https://freebootstrap.net/license
       buyBookModal.style.display = 'none';
     }
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const formatOptions = document.querySelectorAll('input[name="format"]');
+  const languageSelect = document.getElementById('languageSelect');
+  const step1 = document.getElementById('step1');
+  const step2 = document.getElementById('step2');
+  const nextBtn = document.getElementById('nextBtn');
+  const backBtn = document.getElementById('backBtn');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+
+  // Show/hide language selector if Audiobook is selected
+  function updateStep1Display() {
+    const selectedFormat = document.querySelector('input[name="format"]:checked').value;
+    languageSelect.style.display = selectedFormat != 'camel' ? 'block' : 'none';
+  }
+
+  // Initialize language display on page load
+  updateStep1Display();
+
+  // Listen for format change
+  formatOptions.forEach(option => {
+    option.addEventListener('change', updateStep1Display);
+  });
+
+  // Next button → go to shipping step
+  nextBtn.addEventListener('click', () => {
+    step1.style.display = 'none';
+    step2.style.display = 'block';
+  });
+
+  // Back button → return to book info
+  backBtn.addEventListener('click', () => {
+    step2.style.display = 'none';
+    step1.style.display = 'block';
+  });
+
+  // Checkout button → show success (replace with actual checkout logic)
+  checkoutBtn.addEventListener('click', () => {
+    document.getElementById('successMessage').style.display = 'block';
+  });
+});
 </script>
 
 
